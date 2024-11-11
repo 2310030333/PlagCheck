@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plagiarism Checker</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a1b9a, #8e24aa, #ab47bc, #d81b60);
+            color: #333;
+            overflow: hidden;
+        }
+
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+            backdrop-filter: blur(15px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+       
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        
+        h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            backdrop-filter: blur(5px);
+        }
+
+       
+        button {
+            background: linear-gradient(135deg, #8e24aa, #d81b60);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #d81b60, #8e24aa);
+            box-shadow: 0 4px 20px rgba(216, 27, 96, 0.3);
+            transform: translateY(-3px);
+        }
+
+        
+        input[type="text"]:focus,
+        input[type="file"]:focus {
+            outline: none;
+            border-color: #8e24aa;
+            box-shadow: 0px 0px 6px rgba(142, 36, 170, 0.3);
+        }
+
+      
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 1.5rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Plagiarism Checker</h2>
+        <form action="/check" method="POST" enctype="multipart/form-data">
+            <label for="pdf_file">Upload PDF File:</label>
+            <input type="file" name="pdf_file" id="pdf_file" accept="application/pdf" required><br>
+            <button type="submit">Check for Plagiarism</button>
+        </form>
+    </div>
+</body>
+</html>
